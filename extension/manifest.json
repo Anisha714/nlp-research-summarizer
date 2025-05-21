@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Research Paper Summarizer",
+    "version": "1.0",
+    "description": "Summarize research papers in bulk using NLP.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "host_permissions": ["http://127.0.0.1:5000/"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
